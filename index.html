@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neidesign - Nail Studio Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fefefe;
+            overflow-x: hidden;
+        }
+
+        .container-custom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(233, 211, 210, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+        }
+
+        .logo-text {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4a5a5 0%, #b88686 50%, #9a7373 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            background: none;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #4a3f3f;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #d4a5a5, #b88686);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #b88686;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 140px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #fef5f5 0%, #fdefef 50%, #f9e5e5 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(212, 165, 165, 0.15);
+            border: 1px solid rgba(212, 165, 165, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #8a6969;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #2a2020;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #d4a5a5 0%, #b88686 50%, #9a7373 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #6b5858;
+            margin-bottom: 2.5rem;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d4a5a5 0%, #b88686 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(212, 165, 165, 0.3);
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #b88686 0%, #9a7373 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(212, 165, 165, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #b88686;
+            border: 2px solid #d4a5a5;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 165, 165, 0.1);
+            color: #9a7373;
+            border-color: #b88686;
+        }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #b88686;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #8a6969;
+            font-weight: 500;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, rgba(212, 165, 165, 0.5), transparent);
+        }
+
+        .carousel-container {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(212, 165, 165, 0.25);
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: rgba(212, 165, 165, 0.1);
+            border: 1px solid rgba(212, 165, 165, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #b88686;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: #2a2020;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #6b5858;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 165, 165, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(212, 165, 165, 0.2);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(212, 165, 165, 0.15), rgba(184, 134, 134, 0.15));
+            border-radius: 16px;
+            color: #b88686;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .service-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2a2020;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-description {
+            font-size: 0.95rem;
+            color: #6b5858;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-price {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #b88686;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #fef5f5 0%, #ffffff 100%);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            cursor: pointer;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-photo {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(212, 165, 165, 0.3);
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #6b5858;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            color: #b88686;
+            font-size: 1.5rem;
+            margin-top: 4px;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a2020;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: #6b5858;
+        }
+
+        /* Agendamento Section */
+        .agendamento-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #fef5f5 0%, #f9e5e5 100%);
+        }
+
+        .agendamento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .agendamento-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #6b5858;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 165, 165, 0.2);
+            border-radius: 16px;
+        }
+
+        .info-icon {
+            color: #b88686;
+            font-size: 1.25rem;
+        }
+
+        .info-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2a2020;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-text {
+            font-size: 0.95rem;
+            color: #6b5858;
+        }
+
+        .agendamento-form-container {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 165, 165, 0.3);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(212, 165, 165, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2a2020;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid rgba(212, 165, 165, 0.3);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: white;
+            color: #2a2020;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: #d4a5a5;
+            box-shadow: 0 0 0 4px rgba(212, 165, 165, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(135deg, #2a2020 0%, #3a2f2f 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4a5a5 0%, #b88686 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 165, 165, 0.1);
+            border: 1px solid rgba(212, 165, 165, 0.2);
+            border-radius: 12px;
+            color: #d4a5a5;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(212, 165, 165, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #d4a5a5;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-link {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: left;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-link:hover {
+            color: #d4a5a5;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 165, 165, 0.2);
+            text-align: center;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Success Modal */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(42, 32, 32, 0.6);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .success-modal.show {
+            display: flex;
+        }
+
+        .success-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 165, 165, 0.3);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(212, 165, 165, 0.3);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, rgba(212, 165, 165, 0.2), rgba(184, 134, 134, 0.2));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b88686;
+            font-size: 2.5rem;
+        }
+
+        .success-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2a2020;
+            margin-bottom: 1rem;
+        }
+
+        .success-text {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #6b5858;
+            margin-bottom: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero-grid, .about-grid, .agendamento-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-title {
+                font-size: 2.75rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .stat-divider {
+                display: none;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container-custom">
+            <div class="header-content">
+                <div class="logo-text" onclick="scrollToSection('hero')">Neidesign</div>
+                <nav class="nav-menu">
+                    <a class="nav-link" onclick= "scrollToSection('hero')">Início</a>
+                    <a class="nav-link" onclick="scrollToSection('servicos')">Serviços</a>
+                    <a class="nav-link" onclick="scrollToSection('portfolio')">Portfólio</a>
+                    <a class="nav-link" onclick="scrollToSection('sobre')">Sobre</a>
+                    <a class="nav-link" onclick="scrollToSection('agendamento')">Agendar</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container-custom">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        ✨ Nail Designer Profissional
+                    </div>
+                    <h1 class="hero-title">
+                        Transforme Suas Unhas em
+                        <span class="gradient-text"> Obras de Arte</span>
+                    </h1>
+                    <p class="hero-description">
+                        Bem-vinda ao Neidesign! Sou Caroline, nail designer especializada em criar designs únicos e sofisticados. Cada unha é uma tela em branco onde a arte e a elegância se encontram.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="scrollToSection('agendamento')">
+                            📅 Agendar Agora
+                        </button>
+                        <button class="btn-secondary" onclick="scrollToSection('portfolio')">
+                            Ver Portfólio
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">2000+</span>
+                            <span class="stat-label">Clientes Satisfeitas</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Qualidade Garantida</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="carousel-container">
+                        <img src="unha foto/unha 1.jpeg" alt="imagen da unha ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="services-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-badge">Nossos Serviços</span>
+                <h2 class="section-title">Experiências Premium para Suas Unhas</h2>
+                <p class="section-description">
+                    Oferecemos serviços de alta qualidade com produtos premium e técnicas modernas
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-title">Manicure Completa</h3>
+                    <p class="service-description">Tratamento completo das unhas com esmaltação perfeita e duradoura</p>
+                    <div class="service-price">R$ 80</div>
+                    <button class="btn-secondary" onclick="scrollToSection('agendamento')">Agendar Serviço</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💖</div>
+                    <h3 class="service-title">Pedicure Spa</h3>
+                    <p class="service-description">Experiência relaxante com hidratação profunda e esfoliação</p>
+                    <div class="service-price">R$ 90</div>
+                    <button class="btn-secondary" onclick="scrollToSection('agendamento')">Agendar Serviço</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏆</div>
+                    <h3 class="service-title">Alongamento em Gel</h3>
+                    <p class="service-description">Alongamento de unhas com gel de alta qualidade e durabilidade</p>
+                    <div class="service-price">R$ 150</div>
+                    <button class="btn-secondary" onclick="scrollToSection('agendamento')">Agendar Serviço</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-title">Nail Art Premium</h3>
+                    <p class="service-description">Designs personalizados e exclusivos criados especialmente para você</p>
+                    <div class="service-price">R$ 120</div>
+                    <button class="btn-secondary" onclick="scrollToSection('agendamento')">Agendar Serviço</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-badge">Meu Trabalho</span>
+                <h2 class="section-title">Portfólio de Criações</h2>
+                <p class="section-description">
+                    Veja alguns dos designs exclusivos que criei para minhas clientes
+                </p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53" alt="Portfolio 1" class="portfolio-image">
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1610992015762-45dca7fa3a85" alt="Portfolio 2" class="portfolio-image">
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b" alt="Portfolio 3" class="portfolio-image">
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1720343409646-960f6dcccae3" alt="Portfolio 4" class="portfolio-image">
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f" alt="Portfolio 5" class="portfolio-image">
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371" alt="Portfolio 6" class="portfolio-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about-section">
+        <div class="container-custom">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53" alt="Caroline" class="about-photo">
+                </div>
+                <div class="about-content">
+                    <span class="section-badge">Sobre Mim</span>
+                    <h2 class="section-title">Caroline - Sua Nail Designer</h2>
+                    <p class="about-text">
+                        Olá! Sou Caroline, apaixonada por nail art há mais de 8 anos. Minha jornada começou com um curso profissionalizante e se transformou em uma verdadeira vocação.
+                    </p>
+                    <p class="about-text">
+                        Especializada em técnicas modernas de alongamento, nail art personalizada e tratamentos de spa para unhas, busco sempre oferecer uma experiência única e memorável para cada cliente.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🏆</span>
+                            <div>
+                                <h4 class="feature-title">Certificações Profissionais</h4>
+                                <p class="feature-text">Formação em nail art e design de unhas</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💖</span>
+                            <div>
+                                <h4 class="feature-title">Atendimento Personalizado</h4>
+                                <p class="feature-text">Cada cliente é única e especial</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✨</span>
+                            <div>
+                                <h4 class="feature-title">Produtos Premium</h4>
+                                <p class="feature-text">Trabalho apenas com marcas de alta qualidade</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento Section -->
+    <section id="agendamento" class="agendamento-section">
+        <div class="container-custom">
+            <div class="agendamento-grid">
+                <div class="agendamento-info">
+                    <span class="section-badge">Faça seu Agendamento</span>
+                    <h2 class="section-title">Reserve seu Horário</h2>
+                    <p class="agendamento-description">
+                        Preencha o formulário ao lado e envie sua solicitação diretamente pelo WhatsApp. Entrarei em contato para confirmar seu horário.
+                    </p>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-icon">🕐</span>
+                            <div>
+                                <h4 class="info-title">Horário de Atendimento</h4>
+                                <p class="info-text">Segunda a Sábado: 9h às 19h</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <h4 class="info-title">Localização</h4>
+                                <p class="info-text">Rua das Flores, 123 - Centro</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📱</span>
+                            <div>
+                                <h4 class="info-title">WhatsApp</h4>
+                                <p class="info-text">(11) 99999-9999</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agendamento-form-container">
+                    <form id="agendamentoForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="nome">Seu Nome</label>
+                            <input type="text" id="nome" class="form-input" placeholder="Digite seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" class="form-input" placeholder="(11) 99999-9999" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="servico">Serviço</label>
+                            <select id="servico" class="form-select" required>
+                                <option value="">Selecione um serviço</option>
+                                <option value="Manicure Completa">Manicure Completa</option>
+                                <option value="Pedicure Spa">Pedicure Spa</option>
+                                <option value="Alongamento em Gel">Alongamento em Gel</option>
+                                <option value="Nail Art Premium">Nail Art Premium</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="data">Data</label>
+                                <input type="date" id="data" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="hora">Hora</label>
+                                <input type="time" id="hora" class="form-input" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">
+                            📱 Confirmar Agendamento
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="success-icon">💖</div>
+            <h3 class="success-title">Agendamento Enviado!</h3>
+            <p class="success-text">
+                Seu agendamento foi enviado com sucesso! A Neidesign entrará em contato para confirmar. 😊
+            </p>
+            <button class="btn-primary" onclick="closeModal()">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container-custom">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Neidesign</h3>
+                    <p class="footer-description">
+                        Transformando unhas em obras de arte desde 2016.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" class="social-link">📷</a>
+                        <a href="https://wa.me/5511999999999" target="_blank" class="social-link">📱</a>
+                        <a href="mailto:contato@neidesign.com" class="social-link">✉️</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Navegação</h4>
+                        <button class="footer-link" onclick="scrollToSection('hero')">Início</button>
+                        <button class="footer-link" onclick="scrollToSection('servicos')">Serviços</button>
+                        <button class="footer-link" onclick="scrollToSection('portfolio')">Portfólio</button>
+                        <button class="footer-link" onclick="scrollToSection('sobre')">Sobre</button>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Contato</h4>
+                        <p class="footer-text">(11) 99999-9999</p>
+                        <p class="footer-text">contato@neidesign.com</p>
+                        <p class="footer-text">Rua das Flores, 123</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Horários</h4>
+                        <p class="footer-text">Segunda a Sexta</p>
+                        <p class="footer-text">9h às 19h</p>
+                        <p class="footer-text">Sábado: 9h às 17h</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Neidesign. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll function
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const servico = document.getElementById('servico').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+            
+            // Create WhatsApp message
+            const mensagem = `Olá! Gostaria de confirmar meu agendamento:
+
+Nome: ${nome}
+Telefone: ${telefone}
+Serviço: ${servico}
+Data: ${data}
+Hora: ${hora}`;
+            
+            // WhatsApp number (change to your real number)
+            const numeroWhatsApp = '+55 75 993003967';
+            
+            // Open WhatsApp
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+            
+            // Show success modal
+            document.getElementById('successModal').classList.add('show');
+            
+            // Reset form
+            document.getElementById('agendamentoForm').reset();
+            
+            // Hide modal after 5 seconds
+            setTimeout(() => {
+                closeModal();
+            }, 5000);
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('show');
+        }
+    </script>
+</body>
+</html>
